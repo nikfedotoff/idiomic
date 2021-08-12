@@ -315,10 +315,6 @@ footer a {
 	font-weight: 100;
 }
 
-.idiom:hover {
-	border: 1px solid var(--cPrimary);
-}
-
 aside {
     overflow-x: hidden;
     display: grid;
@@ -372,20 +368,6 @@ aside {
     width: 100%;
 }
 
-@keyframes accessGrad {
-    0% {
-        background-position: 0 50%;
-    }
-    
-    50% {
-        background-position: 100% 50%;
-    }
-    
-    to {
-        background-position: 0 50%;
-    }
-}
-
 .cookie {
     position: fixed;
     bottom: 100px;
@@ -429,7 +411,33 @@ aside {
     stroke: #DC143C;
 }
 
-@keyframes moveChild{to{transform:translate3d(-3000px,0,0)}}
+/* КЕЙФРЕЙМЫ */
+@keyframes accessGrad {
+    0% {
+        background-position: 0 50%;
+    }
+    
+    50% {
+        background-position: 100% 50%;
+    }
+    
+    to {
+        background-position: 0 50%;
+    }
+}
+
+@keyframes moveChild {
+    to {
+        transform:translate3d(-3000px, 0, 0)
+    }
+}
+
+/* АДАПТИВ */
+@media (min-width: 1200px) {
+    .idiom:hover {
+        border: 1px solid var(--cPrimary);
+    }
+}
 
 @media (min-width: 320px) and (max-width: 1200px) {
     h1 {
@@ -490,17 +498,18 @@ aside {
     .main-screen {
         width: 100%;
         height: 100%;
-        grid-template-rows: auto 1fr auto;
+        display: block;
     }
 
     .grid-wrapper {
-        height: min(40vh, 300px);
+        height: 300px;
         width: 100vw;
         margin-left: calc(-50vw + 50%);
     }
 
     .running.grid {
-        overflow-x: scroll;
+        /* !!! */
+        overflow-x: hidden;
         overflow-y: hidden;
         display: flex;
         white-space: nowrap;
@@ -515,7 +524,6 @@ aside {
         width: 255px;
         margin-right: 15px;
         margin-bottom: 15px;
-        -webkit-animation: moveChild 40s linear infinite alternate;
         animation: moveChild 40s linear infinite alternate;
         contain: layout;
     }
@@ -526,6 +534,7 @@ aside {
 
     .animated-btn {
         position: fixed;
+        z-index: 99;
         bottom: 0;
         left: 0;
         right: 0;
@@ -534,6 +543,12 @@ aside {
     aside {
         grid-template-rows: 1fr;
         padding-bottom: 60px;
+        overflow: hidden;
+        border-left: 0;
+    }
+
+    main {
+        overflow-y: hidden;
     }
 
     .sidebar__content {

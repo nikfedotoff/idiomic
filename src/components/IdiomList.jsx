@@ -30,6 +30,8 @@ const IdiomList = (props) => {
     const clickIdiom = (i) => {
         props.setSidebarContent("choosen_idiom")
         props.setIdiom(i)
+
+        window.scrollTo(0, document.body.scrollHeight)
     }
 
     return (
