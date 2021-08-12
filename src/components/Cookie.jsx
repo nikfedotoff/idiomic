@@ -17,6 +17,7 @@ const Cookie = () => {
         <div className="cookie">
             <div>
                 <p>
+                    {/* eslint-disable-next-line */}
                     This site uses <a href="#">cookies</a>  to improve your experience.
                 </p>
                 <button onClick={accept}>Okay, Sure!</button>

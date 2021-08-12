@@ -6,7 +6,7 @@ const Sidebar = (props) => {
         <aside>
             <div className="sidebar__header">
                 <span>
-                    {props.content == "random_idiom" ? "Random Idiom" : "Choosen Idiom"}
+                    {props.content === "random_idiom" ? "Random Idiom" : "Choosen Idiom"}
                 </span>
             </div>
             <div className="sidebar__content">
